@@ -10,11 +10,9 @@ jobs:
 
     - name: Prepare environment
       run: |
-        sudo sed -i '/deb-src/s/^# //' /etc/apt/sources.list
+        sudo sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
         sudo apt update
         sudo apt build-dep mesa -y
-        sudo apt update
-        sudo apt install meson
 
     - name: Execute build script
       run: bash ./turnip_builder.sh
