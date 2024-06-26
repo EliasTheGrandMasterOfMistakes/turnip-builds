@@ -59,7 +59,7 @@ prepare_workdir(){
 	###
 	echo "Exracting mesa source to a folder ..." $'\n'
 	unzip mesa-main.zip &> /dev/null
- 	mv platform_external_mesa3d-turnip-build mesa-main
+ 	mv platform_external_mesa3d-turnip-build-perfetto mesa-main
 	cd mesa-main
 }
 
