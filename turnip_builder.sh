@@ -86,7 +86,7 @@ endian = 'little'
 EOF
 
 	echo "Generating build files ..." $'\n'
-	meson build-android-aarch64 --cross-file "$workdir"/mesa-main/android-aarch64 -Dplatforms=android -Dgallium-drivers= -Dplatform-sdk-version=$sdkver -Dandroid-stub=true  -Dvulkan-drivers=freedreno Dfreedreno-kmds=kgsl -Db_lto=true | tee "$workdir"/meson_log
+	meson build-android-aarch64 --cross-file "$workdir"/mesa-main/android-aarch64 -Dplatforms=android -Dgallium-drivers= -Dplatform-sdk-version=$sdkver -Dandroid-stub=true  -Dvulkan-drivers=freedreno -Dfreedreno-kmds=kgsl -Db_lto=true | tee "$workdir"/meson_log
 
 	echo "Compiling build files ..." $'\n'
 	ninja -C build-android-aarch64 | tee "$workdir"/ninja_log
