@@ -7,7 +7,7 @@ deps="meson ninja patchelf unzip curl pip flex bison zip"
 workdir="$(pwd)/turnip_workdir"
 magiskdir="$workdir/turnip_module"
 ndkver="android-ndk-r26c"
-sdkver="31"
+sdkver="34"
 mesasrc="https://codeload.github.com/EliasTheGrandMasterOfMistakes/platform_external_mesa3d/zip/refs/heads/turnip-build"
 clear
 
@@ -86,7 +86,7 @@ endian = 'little'
 EOF
 
 	echo "Generating build files ..." $'\n'
-	meson build-android-aarch64 --cross-file "$workdir"/mesa-main/android-aarch64 -Dplatforms=android -Dgallium-drivers= -Dplatform-sdk-version=$sdkver -Dandroid-stub=true  -Dvulkan-drivers=freedreno -Dfreedreno-kmds=kgsl -Db_lto=true | tee "$workdir"/meson_log
+	meson build-android-aarch64 --cross-file "$workdir"/mesa-main/android-aarch64 -Dplatforms=android -Dgallium-drivers= -Dplatform-sdk-version=$sdkver -Dandroid-stub=true -Dvulkan-beta=true -Dvulkan-drivers=freedreno -Dfreedreno-kmds=kgsl -Db_lto=true | tee "$workdir"/meson_log
 
 	echo "Compiling build files ..." $'\n'
 	ninja -C build-android-aarch64 | tee "$workdir"/ninja_log
