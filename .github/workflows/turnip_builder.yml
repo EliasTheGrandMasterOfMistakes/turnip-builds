@@ -1,6 +1,9 @@
 name: Build "turnip"
 
-on: [push]
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "20 5 1,15 * *"
 
 jobs:
   start_building_turnip:
@@ -30,7 +33,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         body: Turnip magisk module
-        tag_name: github_run
-        name: Weekly Action Release
+        tag_name: workflow_${{github.run_number}}
+        name: Release ${{github.run_number}}
         files: |
            turnip_workdir/turnip.zip
