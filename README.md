@@ -30,6 +30,8 @@
   Turnip is just supported in Adreno 6xx and 7xx GPUs, Adreno 5xx and below is not supported.
   Turnip can be not supported in specific Adreno variants because of lack of support.
 
+## More information:
+
 ### Magisk Usage:
 
   This is designed to be used like a Magisk Module, if you reach problems just disable if are necessary.
