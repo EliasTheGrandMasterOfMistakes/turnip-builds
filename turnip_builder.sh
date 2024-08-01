@@ -133,10 +133,10 @@ EOF
 	cat <<EOF >"module.prop"
 id=turnip
 name=turnip
-version=v1.0
+version=v2.0
 versionCode=1
-author=MrMiy4mo
-description=Turnip is an open-source vulkan driver for devices with adreno GPUs.
+author=MasterOfMistakes
+description=Turnip is an open-source vulkan driver for adreno GPUs.
 EOF
 
 	cat <<EOF >"customize.sh"
