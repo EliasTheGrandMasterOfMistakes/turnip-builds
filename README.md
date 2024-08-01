@@ -1,4 +1,3 @@
-# Please don't use this repo more, this is now just a testing repo
 
 # Unofficial Mesa3D Freedreno's Turnip CI releases
 
@@ -48,7 +47,6 @@
 
 ### Vendor 32 Libraries:
  Doesn't exist for while a 32 bits library, i recommend you to use a just 64bit rom or not use a 32 bit application if are possible
-
 
 ### Adreno Tools:
  Weekly will have a zip for usage in adrenotools, it's manually builded.
