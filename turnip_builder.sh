@@ -8,7 +8,7 @@ workdir="$(pwd)/turnip_workdir"
 magiskdir="$workdir/turnip_module"
 ndkver="android-ndk-r27-beta2"
 sdkver="31"
-mesasrc="https://codeload.github.com/EliasTheGrandMasterOfMistakes/platform_external_mesa3d/zip/refs/heads/turnip-build-perfetto"
+mesasrc="https://gitlab.freedesktop.org/mesa/mesa/-/archive/main/mesa-main.tar.gz"
 clear
 
 # there are 4 functions here, simply comment to disable.
@@ -59,7 +59,6 @@ prepare_workdir(){
 	###
 	echo "Exracting mesa source to a folder ..." $'\n'
 	unzip mesa-main.zip &> /dev/null
- 	mv platform_external_mesa3d-turnip-build-perfetto mesa-main
 	cd mesa-main
 }
 
