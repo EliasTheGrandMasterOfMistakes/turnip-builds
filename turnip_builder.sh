@@ -6,6 +6,7 @@ nocolor='\033[0m'
 deps="meson ninja patchelf unzip curl pip flex bison zip"
 workdir="$(pwd)/turnip_workdir"
 magiskdir="$workdir/turnip_module"
+adrenotoolsdir="$workdir/turnip_adrenotools"
 ndkver="android-ndk-r27-beta2"
 sdkver="31"
 mesasrc="https://gitlab.freedesktop.org/mesa/mesa/-/archive/main/mesa-main.zip"
@@ -179,11 +180,10 @@ generate_adrenotools(){
     }
 EOF
 
-    cp "$workdir"/mesa-main/build-android-aarch64/src/freedreno/vulkan/libvulkan_freedreno.so $workdir/turnip_adrenotools
-   	patchelf --set-soname vulkan.ad07xx.so libvulkan_freedreno.so
+    cp "$workdir"/vulkan.adreno.so "$adrenotoolsdir"/
+    patchelf --set-soname vulkan.ad07xx.so vulkan.adreno.so
     cd $workdir
-   	zip -r "$workdir"/turnip_adrenotools/turnip_adrenotools.zip ./* &> /dev/null
-	cp "$workdir"/turnip_adrenotools/turnip_adrenotools.zip $workdir/
+   	zip -r "$workdir"/turnip_adrenotools.zip "$adrenotoolsdir"/* &> /dev/null
     if ! [ -a "$workdir"/turnip_adrenotools.zip ];
 		then echo -e "$red-Packing failed!$nocolor" && exit 1
 		else echo -e "$green-All done, you can take your module from here;$nocolor" && echo "$workdir"/turnip_adrenotools.zip
