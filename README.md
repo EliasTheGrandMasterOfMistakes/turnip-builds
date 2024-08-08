@@ -44,13 +44,13 @@
 
  Folder Location: Vendor/lib64/hw/
 
-
 ### Vendor 32 Libraries:
  Doesn't exist for while a 32 bits library, i recommend you to use a just 64bit rom or not use a 32 bit application if are possible
 
 ### Adreno Tools:
- Weekly will have a zip for usage in adrenotools, it's manually builded.
- You can use it in adrenotools applications
+  We now build in CI adrenotools releases for usage in emulators
+  it's based in a copy from [adrenotoolsdrivers](https://github.com/K11MCH1/AdrenoToolsDrivers) from KIMCHI
+  You can use in supported emulators
   
 ### Scheduled Releases:
 - Automated releases at 06:00 UTC on the 1st and 15th of each month.
@@ -71,3 +71,4 @@
 - https://gitlab.freedesktop.org/mesa/mesa/-/issues/6802
 
 ### Credits to Freedreno and Mesa3D projects.
+### Special Thanks to @KIMCHI and @asuka-mio
