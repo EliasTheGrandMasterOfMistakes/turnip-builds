@@ -18,6 +18,7 @@ run_all(){
 	prepare_workdir
 	build_lib_for_android
 	port_lib_for_magisk
+	generate_adrenotools
 }
 
 
@@ -152,6 +153,40 @@ EOF
 	if ! [ -a "$workdir"/turnip.zip ];
 		then echo -e "$red-Packing failed!$nocolor" && exit 1
 		else echo -e "$green-All done, you can take your module from here;$nocolor" && echo "$workdir"/turnip.zip
+	fi
+}
+
+generate_adrenotools(){
+    cd $workdir
+    echo "Creating AdrenoTools Zip release now..."
+    echo "Generate ZIP hierarchy files"
+    mkdir turnip_adrenotools
+    cd turnip_adrenotools
+
+    echo "Generating XML files ..."
+
+    cat <<EOF > "meta.json"
+    {
+      "schemaVersion": 1,
+      "name": "Mesa Turnip Driver v24.3.0",
+      "description": "Builded by CI based on KIMCHI releases .",
+      "author": "MasterOfMistakes",
+      "packageVersion": "2",
+      "vendor": "Mesa",
+      "driverVersion": "Vulkan 1.3.292",
+      "minApi": 29,
+      "libraryName": "vulkan.ad07xx.so"
+    }
+EOF
+
+    cp "$workdir"/mesa-main/build-android-aarch64/src/freedreno/vulkan/libvulkan_freedreno.so $workdir/turnip_adrenotools
+   	patchelf --set-soname vulkan.ad07xx.so libvulkan_freedreno.so
+    cd $workdir
+   	zip -r "$workdir"/turnip_adrenotools/turnip_adrenotools.zip ./* &> /dev/null
+	cp "$workdir"/turnip_adrenotools/turnip_adrenotools.zip $workdir/
+    if ! [ -a "$workdir"/turnip_adrenotools.zip ];
+		then echo -e "$red-Packing failed!$nocolor" && exit 1
+		else echo -e "$green-All done, you can take your module from here;$nocolor" && echo "$workdir"/turnip_adrenotools.zip
 	fi
 }
 
