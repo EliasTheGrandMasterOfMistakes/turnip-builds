@@ -184,8 +184,7 @@ EOF
     cd $adrenotoolsdir
     patchelf --set-soname vulkan.ad07xx.so vulkan.adreno.so
     mv vulkan.adreno.so vulkan.ad07xx.so
-    cd $workdir
-   	zip -r "$workdir"/turnip_adrenotools.zip "$adrenotoolsdir"  &> /dev/null
+   	zip -r "$workdir"/turnip_adrenotools.zip ./  &> /dev/null
     if ! [ -a "$workdir"/turnip_adrenotools.zip ];
 		then echo -e "$red-Packing failed!$nocolor" && exit 1
 		else echo -e "$green-All done, you can take your module from here;$nocolor" && echo "$workdir"/turnip_adrenotools.zip
