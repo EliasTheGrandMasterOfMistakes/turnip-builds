@@ -174,8 +174,8 @@ generate_adrenotools(){
       "author": "MasterOfMistakes",
       "packageVersion": "2",
       "vendor": "Mesa",
-      "driverVersion": "Vulkan 1.3.292",
-      "minApi": 29,
+      "driverVersion": "Vulkan 1.4.305",
+      "minApi": 30,
       "libraryName": "vulkan.ad07xx.so"
     }
 EOF
