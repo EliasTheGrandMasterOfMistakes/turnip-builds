@@ -169,7 +169,7 @@ generate_adrenotools(){
     cat <<EOF > "meta.json"
     {
       "schemaVersion": 1,
-      "name": "Mesa Turnip Driver v24.3.0",
+      "name": "Mesa Turnip Driver v25.0.0-Devel",
       "description": "Builded by CI based on KIMCHI releases .",
       "author": "MasterOfMistakes",
       "packageVersion": "2",
