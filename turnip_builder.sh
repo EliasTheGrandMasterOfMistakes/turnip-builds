@@ -134,7 +134,7 @@ EOF
 	cat <<EOF >"module.prop"
 id=turnip
 name=turnip
-version=v2.0
+version=v25.1.0-devel
 versionCode=1
 author=MasterOfMistakes
 description=Turnip is an open-source vulkan driver for adreno GPUs.
@@ -169,7 +169,7 @@ generate_adrenotools(){
     cat <<EOF > "meta.json"
     {
       "schemaVersion": 1,
-      "name": "Mesa Turnip Driver v25.0.0-Devel",
+      "name": "Mesa Turnip Driver v25.1.0-Devel",
       "description": "Builded by CI based on KIMCHI releases .",
       "author": "MasterOfMistakes",
       "packageVersion": "2",
