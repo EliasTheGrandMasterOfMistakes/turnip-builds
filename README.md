@@ -1,7 +1,7 @@
 
 # Unofficial Mesa3D Freedreno's Turnip CI releases
 
-  This is a unofficial CI releases for Turnip Vulkan Driver from Mesa3D to Magisk and Adrenotools targets
+  This is a unofficial Turnip Vulkan Driver builds to Android Magisk and Adrenotools targets
 
 ## What is Turnip?
 
@@ -12,7 +12,7 @@
  Mesa3D as default support multiple platforms in common code, this include Android Platform. Turnip to be supported in Android
  that is a different platform needs to use KGSL that is a Kernel Driver Qualcoom Layer for Adreno GPUs.
 
-## Why Turnip is better for emulators or Termux Games usage?
+## Why Turnip is better  emulators or Termux Games usage?
 
   Different from Qualcomm Proprietary Drivers that targets Android, Turnip reaches Linux and Chromeos in Mind, this means
   that is trying to expose all necessary capabilities that a Linux Desktop or Linux Mobile environment depends to use. 
@@ -21,10 +21,9 @@
   limited Vulkan Android support or can gains performance when some specific extensions out of android usage and that is not obrigatory.
   in termux cases this is like a Linux Desktop, and you can gains a better compatibility.
 
-  Qualcomm proprietary driver doesn't depend to target specific Linux and is not obrigatory to use extensions that is out of android apps usage
-  and in majority of cases not expose a greater Vulkan version than 1.1 or 1.2 target depending of which Adreno GPU are in device.
+  Qualcomm proprietary driver doesn't depend to target specific Linux and is not obrigatory to use extensions that is out of android apps usage and in majority of cases not expose a greater Vulkan version than 1.1 or 1.2 target depending of which Adreno GPU are in device.
 
-  For default Turnip exposes Vulkan 1.3 version.
+As default Turnip exposes Vulkan 1.3 version.
 
 ## GPU Compatibility:
   
