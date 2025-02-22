@@ -22,14 +22,14 @@ jobs:
       run: bash ./turnip_builder.sh
 
     - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v3.1.0
+      uses: actions/upload-artifact@v4
       with:
-        name: Upload meson and ninja logs for debugging
+        name: Upload meson and ninja logs for debugging-${{ matrix.runs-on }}
         path: |
           turnip_workdir/ninja_log
           turnip_workdir/mesa-main/build-android-aarch64/meson-logs/meson-log.txt
 
-    - name: Release "turnip"
+    - name: Release "turnip build - Mesa-25.1.0-devel"
       uses: softprops/action-gh-release@v1
       with:
         body: Turnip magisk module
